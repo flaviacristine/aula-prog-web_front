@@ -1,0 +1,28 @@
+
+  <div class="row">
+    <div class="col-12">
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of produtos">
+            <th scope="row">{{produto.id}}</th>
+            <td>{{produto.nome}}</td>
+            <td>R$ {{produto.preco}}</td>
+            <td>{{produto.categoria.nome}}</td>
+            <td>Alterar | Excluir</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
