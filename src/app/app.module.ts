@@ -16,12 +16,15 @@ import { CategoriaComponent } from './categoria/categoria.component';
 
 // Importar todos os Serviços
 import {ProdutoService} from './produto/produto.service';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import {CarrinhoService} from './carrinho/carrinho.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProdutoComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {ProdutoService} from './produto/produto.service';
   ],
   providers: [
     appRoutingProviders,
-    ProdutoService
+    ProdutoService,
+    CarrinhoService
   ],
   bootstrap: [AppComponent]
 })

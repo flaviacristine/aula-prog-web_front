@@ -8,7 +8,7 @@ import {Produto} from './produto';
 @Injectable()
 export class ProdutoService {
 
-    public API_URL: string = 'http://localhost:8080';
+    public API_URL: string = 'http://localhost:8081';
     
     constructor(public http : Http){}
 

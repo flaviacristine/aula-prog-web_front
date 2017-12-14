@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {CarrinhoService} from '../carrinho/carrinho.service';
 import {ProdutoService} from './produto.service';
 import {Produto} from './produto';
 
@@ -13,7 +14,10 @@ export class ProdutoComponent implements OnInit {
   produtos : Produto[];
 
 
-  constructor(private produtoService : ProdutoService) {
+  constructor(
+    private produtoService : ProdutoService,
+    private carrinhoService: CarrinhoService
+  ) {
 
     this.produtoService.getProdutos()
       .then(result => {
@@ -24,6 +28,10 @@ export class ProdutoComponent implements OnInit {
       });
 
    }
+
+  adicionarProduto(produto: Produto){
+    this.carrinhoService.adicionarProduto(produto);
+  }
 
   ngOnInit() {
   }
