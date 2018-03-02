@@ -33,4 +33,4 @@ import {CategoryService} from './category.service';
       CategoryService
     ]
   })
-  export class PaisModule { }
+  export class CategoryModule { }

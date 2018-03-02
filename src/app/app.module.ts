@@ -1,40 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
-
-// Adicionar o modulo HTTP
-import { HttpModule } from '@angular/http';
-
-//Adicionar as rotas
-import {appRoutingProviders, routing} from './app.routes';
-
-// importar todos os componentes
-import { ProdutoComponent } from './produto/produto.component';
-import { CategoriaComponent } from './categoria/categoria.component';
-
-// Importar todos os Serviços
-import {ProdutoService} from './produto/produto.service';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
-import {CarrinhoService} from './carrinho/carrinho.service';
+import {AppRoutingModule} from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProdutoComponent,
-    CategoriaComponent,
-    CarrinhoComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    routing
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [
-    appRoutingProviders,
-    ProdutoService,
-    CarrinhoService
   ],
   bootstrap: [AppComponent]
 })
