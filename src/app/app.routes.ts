@@ -1,12 +1,19 @@
 import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
 
-import { ProdutoComponent } from './produto/produto.component';
-
-export const routes : Routes =[
-    { path: '', redirectTo: 'produto', pathMatch: 'full' },
-    {path: 'produto', component: ProdutoComponent}
-];
-
-export const appRoutingProviders: any[] = [];
+const appRoutes: Routes = [
     
-export const routing = RouterModule.forRoot(routes);
+    {path: '', redirectTo: '/', pathMatch: 'full'},
+    {path: 'category', loadChildren: 'app/domain/category/category.module#CategoryModule'}
+  ];
+
+  @NgModule({
+    imports: [
+      RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: true }
+      )
+    ],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }
