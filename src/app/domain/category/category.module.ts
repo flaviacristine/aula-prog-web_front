@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Component
 import {CategoryListComponent} from './category-list/category-list.component'
+import {CategoryFormComponent} from './category-form/category-form.component'
 
 //routing 
 import {CategoryRouting} from './category-routing.module';
@@ -15,7 +16,8 @@ import {CategoryService} from './category.service';
 @NgModule({
     declarations: [
         //Componentes
-        CategoryListComponent
+        CategoryListComponent,
+        CategoryFormComponent
 
     ],
     imports: [
