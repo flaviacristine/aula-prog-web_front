@@ -19,13 +19,20 @@ export class CategoryService{
             .get(`${this.API_URL}/category`)
             .map(res => res.json().content);
     }
-    delete(id: number): Observable<boolean>{
+
+    findOne(id:number): Observable<Category[]>{
+        return this.http
+            .get(`${this.API_URL}/category`)
+            .map(res => res.json().content);
+    }
+
+    delete(id:number): Observable<boolean>{
         return this.http
             .delete(`${this.API_URL}/category/${id}`)
             .map(res => res.json().content);
     }
      save(category: Category): Observable<Category>{
-         let headers = new Headers({'Content - Type':'application/json'});
+         let headers = new Headers({'Content-Type':'application/json'});
          let options = new RequestOptions({headers: headers});
 
          if(category.id){
@@ -33,6 +40,10 @@ export class CategoryService{
             .put(`${this.API_URL}/category/`, JSON.stringify(category), options)
             .map(res => res.json().content);
          }
+         else{
+         return this.http
+         .post(`${this.API_URL}/category/`, JSON.stringify(category), options)
+         .map(res => res.json().content);}
      }
 
 }

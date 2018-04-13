@@ -13,10 +13,13 @@
         <th scope="row">{{category.id}}</th>
         <td>{{category.nome}}</td>
         <td>{{category.sigla}}</td>
-        <td>Alterar | 
+        <td>
+          <button [routerLink]="['form',category.id]">Alterar</button> 
+          | 
           <button (click)="delete(category.id, i)" >Excluir</button>
         </td>
       </tr>
 
     </tbody>
   </table>
+  <button [routerLink]="['form']">Novo</button>
