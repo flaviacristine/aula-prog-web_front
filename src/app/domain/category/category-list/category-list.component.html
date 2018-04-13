@@ -13,7 +13,9 @@
         <th scope="row">{{category.id}}</th>
         <td>{{category.nome}}</td>
         <td>{{category.sigla}}</td>
-        <td>Alterar | Excluir</td>
+        <td>Alterar | 
+          <button (click)="delete(category.id, i)" >Excluir</button>
+        </td>
       </tr>
 
     </tbody>

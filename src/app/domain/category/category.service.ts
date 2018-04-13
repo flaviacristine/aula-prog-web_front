@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers, HttpModule} from '@angular/http';
+import {Http, Headers, HttpModule, RequestOptions} from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -21,11 +21,19 @@ export class CategoryService{
     }
     delete(id: number): Observable<boolean>{
         return this.http
-            .delete('${this.API_URL}/category/$(id)')
+            .delete(`${this.API_URL}/category/${id}`)
             .map(res => res.json().content);
-        
     }
-    
+     save(category: Category): Observable<Category>{
+         let headers = new Headers({'Content - Type':'application/json'});
+         let options = new RequestOptions({headers: headers});
+
+         if(category.id){
+             return this.http
+            .put(`${this.API_URL}/category/`, JSON.stringify(category), options)
+            .map(res => res.json().content);
+         }
+     }
 
 }
 
