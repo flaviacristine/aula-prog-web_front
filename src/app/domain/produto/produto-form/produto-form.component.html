@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+
+        <div class="row">
+            <div class="col-log-12">
+                <input type="text" class="form-control" formControlName="nome"/>
+                <input type="text" class="form-control" formControlName="descricao"/>
+                <input type="text" class="form-control" formControlName="marca"/>
+                <input type="text" class="form-control" formControlName="preco"/>
+            </div>
+        </div>
+    
+        <button (click)="salvar(form.value)"> salvar</button>
+        <button [routerLink]="['/produto']">Voltar</button>
+    
+        </form>
