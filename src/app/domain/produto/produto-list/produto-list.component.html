@@ -3,16 +3,20 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Sigla</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Descaricao</th>
+            <th scope="col">Preco</th>
             <th scope="col">Operações</th>
           </tr>
         </thead>
         <tbody>
     
           <tr *ngFor="let produto of produtos; let i = index">
-            <th scope="row">{{produto.id}}</th>
+            <td scope="row">{{produto.id}}</td>
             <td>{{produto.nome}}</td>
-            <td>{{produto.sigla}}</td>
+            <td>{{produto.marca}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.preco}}</td>
             <td>
               <button [routerLink]="['form',produto.id]">Alterar</button> 
               | 

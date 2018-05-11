@@ -13,6 +13,7 @@ import {ProdutoRouting} from './produto-routing.module';
 
 //Service
 import {ProdutoService} from './produto.service';
+import { CategoryService } from '../category/category.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import {ProdutoService} from './produto.service';
     
     providers: [
       // services
-      ProdutoService
+      ProdutoService,
+      CategoryService
     ]
 
   })

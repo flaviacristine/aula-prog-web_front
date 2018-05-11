@@ -19,7 +19,7 @@ import {Produto} from '../produto';
     ngOnInit() {
       this.produtoService.findAll()
         .subscribe(produtos => {
-          this.produtos = this.produtos
+          this.produtos = produtos
         });
     }
 

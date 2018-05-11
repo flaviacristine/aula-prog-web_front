@@ -31,6 +31,17 @@ export class CategoryService{
             .delete(`${this.API_URL}/category/${id}`)
             .map(res => res.json().content);
     }
+
+    update(category: Category) {
+        let headers = new Headers({ 'Content-Type': 'application/json' })
+        let options = new RequestOptions({ headers: headers })
+    
+        const body = JSON.stringify(category);
+    
+        return this.http.put(`${this.API_URL}/category/${category.id}`, body, options)
+          .map(response => response.json());
+      }
+
      save(category: Category): Observable<Category>{
          let headers = new Headers({'Content-Type':'application/json'});
          let options = new RequestOptions({headers: headers});

@@ -43,10 +43,21 @@ import {ActivatedRoute, Router} from '@angular/router';
     }
 
     salvar(category: Category){
-      this.categoryService.save(category)
-        .subscribe(response =>{
-          // redirecionar
-          this.router.navigate(['/category']);
-        });
+
+
+      if(category.id == null) {
+        this.categoryService.save(category).subscribe(data => {
+            this.router.navigate(['/category']);
+            console.log('ta salvando');
+        })
+    } else {
+        this.categoryService.update(category).subscribe(
+            () => this.router.navigate(['/category'])
+        )
+    }
+
+
+
+
     }
     }

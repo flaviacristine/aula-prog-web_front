@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-8">
                 <ul>
-                    <li><a [routerLink]="['category']">TABELA com git</a></li>
+                    <li><a [routerLink]="['category']">Categoria</a></li>
                     <li><a [routerLink]="['produto']">Produto</a></li>
                     <li><a href="http:www.google.com">Link 1</a></li>
                 </ul>
@@ -30,7 +30,7 @@
 
     <!-- CONTEUDO -->
     <div class="container">
-        <div>
+        <div class="col-3">
             <ul>
                 <li><a href="http:www.google.com">Link 1</a></li>
                 <li><a href="http:www.google.com">Link 1</a></li>
@@ -39,12 +39,12 @@
         </div>
         <div>
             
-            <router-outlet></router-outlet>
+            <router-outlet>
+            </router-outlet>
 
         </div>
     </div>
-
     <!-- RODAPE -->
     <div>
-        <p><i>2018 - Todos direitos reservados</i></p>
+        <p><i>2018 - Todos os direitos reservados</i></p>
     </div>

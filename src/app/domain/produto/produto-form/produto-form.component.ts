@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Category } from '../../category/category';
 import { Produto } from '../produto';
 import { ProdutoService } from '../produto.service';
-
+import { CategoryService } from '../../category/category.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,24 +13,37 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProdutoFormComponent implements OnInit {
   form: FormGroup;
+  produto: Produto;
+  categories: Category[];
 
   constructor(
     private produtoService: ProdutoService,
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
+    public categoryService: CategoryService,
 
 
   ) { }
 
   ngOnInit() {
 
+    this.categoryService.findAll()
+        .subscribe(categories => {
+          this.categories = categories;
+          console.log(this.categories);
+        });
+
     let produto: Produto = new Produto();
     produto.id = this.route.snapshot.params['id'];
 
     this.form = this.formBuilder.group({
       id: [],
-      nome: ['', Validators.required]
+      nome: ['', Validators.required],
+      descricao: ['', Validators.required],
+      marca: ['', Validators.required],
+      preco: ['', Validators.required],
+      category:[]
     }, {});
 
     if (produto.id != null) {

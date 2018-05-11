@@ -2,9 +2,9 @@ import {Category} from '../category/category';
 
 export class Produto{
     id: number;
-    nome: String;
+    nome: string;
     preco: number;
-    descricao: String;
-    marca: String;
-    categoria: Category;
+    descricao: string;
+    marca: string;
+    category: Category;
 }

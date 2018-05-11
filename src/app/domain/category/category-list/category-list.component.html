@@ -12,7 +12,6 @@
       <tr *ngFor="let category of categories; let i = index">
         <th scope="row">{{category.id}}</th>
         <td>{{category.nome}}</td>
-        <td>{{category.sigla}}</td>
         <td>
           <button [routerLink]="['form',category.id]">Alterar</button> 
           | 
