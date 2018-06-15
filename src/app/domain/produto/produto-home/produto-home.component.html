@@ -1,0 +1,17 @@
+<div>
+    <div id='produtos' *ngFor="let produto of produtos; let i = index">
+        <div class="gallery">
+            <a target="_blank" href="assets/download.png">
+                <img src="assets/download.png" alt="trolagem" width="300" height="200">
+            </a>
+            <div class="desc">
+                <h4>{{produto.nome}} . {{produto.marca}} </h4>
+                <p> {{produto.descricao}}</p>
+                <p><b>Preço:{{produto.preco}}</b></p>
+                <button (click)="adicionarProduto(produto)" >carrinho</button>
+                
+            </div>
+
+        </div>
+    </div>
+</div>

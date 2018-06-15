@@ -2,27 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <img id="logo" src="assets/logo.png" alt="Logomarca muito louca.">
+                <img id="logo" src="assets/images.png" alt="Logomarca muito louca.">
             </div>
             <div class="col-6">
-                <p class="destaque">THE WORLD'S LARGEST WEB DEVELOPER SITE</p>    
+                <p class="destaque">Stars Desing</p>   
+                <app-carrinho></app-carrinho> 
             </div>
         </div>
     </div>
 
     <!-- MENU -->
-    <div class="container bg-verde-musgo">
+    <div class="container">
         <div class="row">
             <div class="col-8">
                 <ul>
+                    <li><a [routerLink]="['produto/home']">Home</a></li>
                     <li><a [routerLink]="['category']">Categoria</a></li>
                     <li><a [routerLink]="['produto']">Produto</a></li>
-                    <li><a href="http:www.google.com">Link 1</a></li>
+                    
                 </ul>
             </div>
             <div class="col-4">
                 <ul>
-                    <li><a href="http:www.google.com">Link 1</a></li>
+                    <li><a href="http:www.google.com">link</a></li>
                 </ul>
             </div>
         </div>
@@ -45,6 +47,10 @@
         </div>
     </div>
     <!-- RODAPE -->
-    <div>
-        <p><i>2018 - Todos os direitos reservados</i></p>
+    <div class="container" style="clear:both; display:block">
+        <div class="row">
+            <div class="col-md-12">
+                <p><i>2018 - Todos os direitos reservados</i></p>
+            </div>
+        </div>
     </div>

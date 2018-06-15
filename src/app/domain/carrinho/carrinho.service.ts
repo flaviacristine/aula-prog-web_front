@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 
 import {Carrinho} from './carrinho'
 import {Produto} from '../produto/produto'
-
+const CARRINHO_NOME='carrinhonum'
 @Injectable()
 export class CarrinhoService {
 
@@ -18,11 +18,16 @@ export class CarrinhoService {
     carrinho = this.carrinhoSubject.asObservable();
     
     
-    constructor(public http : Http){}
+    constructor(public http : Http){
+        this .produtos = JSON.parse(localStorage.getItem("carrinho"));
+        console.log(this.produtos);
+    }
 
     adicionarProduto(produto: Produto){
         this.produtos.push(produto);
+        //localStorage.setItem(CARRINHO_NOME,this.produtos);
         this.carrinhoSubject.next(<Carrinho>{ativo: true , produtos:  this.produtos});
+        localStorage.setItem("carrinho", JSON.stringify( this.produtos));
     }
 
     removerProduto(id: number){

@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ProdutoListComponent} from './produto-list/produto-list.component'
 import {ProdutoFormComponent} from './produto-form/produto-form.component'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
+import {ProdutoHomeComponent} from './produto-home/produto-home.component'
 //routing 
 import {ProdutoRouting} from './produto-routing.module';
 
@@ -19,7 +19,8 @@ import { CategoryService } from '../category/category.service';
     declarations: [
         //Componentes
         ProdutoListComponent,
-        ProdutoFormComponent
+        ProdutoFormComponent,
+        ProdutoHomeComponent
 
     ],
     imports: [

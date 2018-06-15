@@ -5,10 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import {AppRoutingModule} from './app.routes';
+import {CarrinhoComponent} from './domain/carrinho/carrinho.component';
+import {CarrinhoService} from './domain/carrinho/carrinho.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +20,7 @@ import {AppRoutingModule} from './app.routes';
     AppRoutingModule
   ],
   providers: [
+    CarrinhoService
   ],
   bootstrap: [AppComponent]
 })

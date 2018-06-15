@@ -5,7 +5,8 @@ const appRoutes: Routes = [
     
     {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: 'category', loadChildren: 'app/domain/category/category.module#CategoryModule'},
-    {path:'produto', loadChildren: 'app/domain/produto/produto.module#ProdutoModule'}
+    {path:'produto', loadChildren: 'app/domain/produto/produto.module#ProdutoModule'},
+    // {path:'carrinho', loadChildren: 'app/domain/carrinho/carrinho.module#CarrinhoModule'},
   ];
 
   @NgModule({
